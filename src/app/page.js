@@ -16,7 +16,7 @@ export default function Home() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/upload",
+        "https://doctally-backend.onrender.com/upload",
         formData,
         {
           headers: {
