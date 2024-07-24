@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import axios from "axios";
 import UploadFile from "../components/UploadFile";
@@ -15,7 +16,7 @@ export default function Home() {
 
     try {
       const response = await axios.post(
-        "https://doctally-backend.onrender.com",
+        "https://doctally-backend.onrender.com/upload",
         formData,
         {
           headers: {
