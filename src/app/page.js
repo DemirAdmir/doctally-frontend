@@ -1,10 +1,8 @@
-"use client";
-
 import { useState } from "react";
 import axios from "axios";
 import UploadFile from "../components/UploadFile";
 import MetricsDisplay from "../components/MetricsDisplay";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [metrics, setMetrics] = useState(null);
@@ -16,7 +14,7 @@ export default function Home() {
 
     try {
       const response = await axios.post(
-        "https://doctally-backend.onrender.com/upload",
+        "https://doctally-backend.onrender.com",
         formData,
         {
           headers: {
@@ -40,7 +38,7 @@ export default function Home() {
       <h1 className="text-4xl font-bold mb-2">DocTally</h1>
       <p className="text-lg mb-6">Counting Words in a PDF Document</p>
       <UploadFile onFileUpload={handleFileUpload} progress={progress} />
-      <MetricsDisplay metrics={metrics} />
+      {metrics && <MetricsDisplay metrics={metrics} />}
       <Footer />
     </div>
   );

@@ -1,13 +1,29 @@
+"use client";
+
 export default function MetricsDisplay({ metrics }) {
   return (
     metrics && (
       <div className="mt-4 p-4 border rounded">
-        <p>Pages: {metrics.pages}</p>
-        <p>Words: {metrics.words}</p>
-        <p>Characters (with spaces): {metrics.charactersWithSpaces}</p>
-        <p>Characters (without spaces): {metrics.charactersWithoutSpaces}</p>
-        <p>Paragraphs: {metrics.paragraphs}</p>
-        <p>Lines: {metrics.lines}</p>
+        <p>
+          <strong>Pages:</strong> {metrics.pages}
+        </p>
+        <p>
+          <strong>Words:</strong> {metrics.words}
+        </p>
+        <p>
+          <strong>Characters (with spaces):</strong>{" "}
+          {metrics.charactersWithSpaces}
+        </p>
+        <p>
+          <strong>Characters (without spaces):</strong>{" "}
+          {metrics.charactersWithoutSpaces}
+        </p>
+        <p>
+          <strong>Paragraphs:</strong> {metrics.paragraphs}
+        </p>
+        <p>
+          <strong>Lines:</strong> {metrics.lines}
+        </p>
       </div>
     )
   );
